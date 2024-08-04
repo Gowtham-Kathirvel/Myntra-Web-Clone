@@ -1,0 +1,13 @@
+a{
+   
+    color: black !important;
+} 
+
+#shop_by_category{
+ 
+     color:blue !important;
+     text-shadow: black 10px !important;
+
+
+}
+
