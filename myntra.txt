@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bts.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+
+  
+
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" style="width: 100%";  >
+        <img src="data:image/png;base64,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" style="margin-left: 23px;" alt="Bootstrap" width="30" height="24" >
+        <div class="container-fluid">
+          
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color: black; " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  MEN
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">shirts</a></li>
+                  <li><a class="dropdown-item" href="#">pants</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">footwears</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  WOMEN
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">kurtas</a></li>
+                  <li><a class="dropdown-item" href="#">sarees</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">chudi</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  KIDS
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">shirts</a></li>
+                    <li><a class="dropdown-item" href="#">pants</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">footwears</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  HOME & LIVING
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">flooring</a></li>
+                  <li><a class="dropdown-item" href="#">lighting</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">curtains</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  BEAUTY
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">make-up</a></li>
+                  <li><a class="dropdown-item" href="#">skincare</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">fragrance</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  STUDIO<sup style="color: rgb(255, 0, 76);">NEW</sup>
+                </a>
+                <ul class="dropdown-menu">
+
+                  <li><a class="dropdown-item" href="#">EXPLORE STUDIO</a></li>
+                </ul>
+              </li>
+            </ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><img src="data:image/png;base64,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" width=24 height=24></span>
+                <input type="text" class="form-control" placeholder="Search for products, brands and more" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+          </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#profile" style="text-decoration: none; margin-top: 20px;"><figure class="figure">
+            <img src="data:image/jpeg;base64,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" class="rounded float-end" class="figure-img img-fluid rounded" alt="Profile" width="30" height="24">
+            <figcaption class="figure-caption"> profile</figcaption></figure>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a> 
+        <a href="#profile" style="text-decoration: none;margin-top: 20px;"><figure class="figure">
+            <img src="data:image/png;base64,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" class="rounded float-end" class="figure-img img-fluid rounded" alt="Profile" width="30" height="24">
+        <figcaption class="figure-caption"> wishlist</figcaption></figure>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </a> 
+          <a href="#profile" style="text-decoration: none;margin-top: 20px;"><figure class="figure">
+            <img src="data:image/png;base64,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" class="rounded float-end" class="figure-img img-fluid rounded" alt="Profile" width="30" height="24">
+            <figcaption class="figure-caption"> bag</figcaption></figure>&nbsp;&nbsp;
+          </figure></a>
+            
+            
+            
+    </nav>
+      <div >
+        <a href="#offer"><img src="C:\Users\Let`s\Pictures\Myntra Web Images\offer.png" class="img-fluid" width=100%></a> 
+        <a href="#offer"><img src="C:\Users\Let`s\Pictures\Myntra Web Images\coupon.png" class="img-fluid" width=100%></a>
+        <a href="#offer"><img src="C:\Users\Let`s\Pictures\Myntra Web Images\flat.png" class="img-fluid" width=100%></a>
+        <a href="#offer"><img src="C:\Users\Let`s\Pictures\Myntra Web Images\deals.png" class="img-fluid" width=100%></a>
+      </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <!--carousel-->
+        <div id="carouselExampleControls" class="carousel slide mt-4" data-bs-ride="carousel">
+          
+            
+        
+          <div class="carousel-inner mt-4">
+            <div class="carousel-item active">
+              <a href="#">
+                <div class="container">
+
+             <div class="row" >
+              <div class="col" >
+              <div class="card" style="width: 18rem;">
+                <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 1.png" href="Collections1" class=" img-fluid" class="card-img-top" alt="...">
+                
+              </div>
+            </div>
+            <div class="col" >
+              <div class="card" style="width: 18rem;">
+                <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 2.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+                
+              </div>
+            </div>
+            <div class="col" >
+              <div class="card" style="width: 18rem;">
+                <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 3.png"href="Collections1" class=" img-fluid"class="card-img-top" alt="...">
+               
+              </div>
+            </div>
+            <div class="col" >
+              <div class="card" style="width: 18rem;">
+                <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 4.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+               
+              </div>
+            </div>
+          </div>
+        </div></a> 
+      </div> 
+      
+      
+
+      <div class="carousel-item ">
+        <a href="#">
+          <div class="container">
+
+       <div class="row" >
+        <div class="col" >
+        <div class="card" style="width: 18rem;">
+          <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 5.png"href="Collections1" class=" img-fluid"class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+      <div class="col" >
+        <div class="card" style="width: 18rem;">
+          <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 6.png" href="Collections1"class=" img-fluid"class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+      <div class="col" >
+        <div class="card" style="width: 18rem;">
+          <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 7.png" href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+      <div class="col" >
+        <div class="card" style="width: 18rem;">
+          <img src="C:\Users\Let`s\Pictures\Myntra Web Images\card 8.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+    </div>
+  </div></a> 
+</div>
+
+
+
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <center id="shop_by_category">
+          <h1>SHOP BY CATEGORY</h1>
+      </center>
+          
+      <center>
+      <a href="#">
+        <div class="container">
+
+     <div class="row" >
+      <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r1c1.png" href="Collections1" class=" img-fluid" class="card-img-top" alt="...">
+       
+      </div>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r1c2.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r1c3.png"href="Collections1" class=" img-fluid"class="card-img-top" alt="...">
+
+      </div>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r1c4.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+        
+      </div>
+    </div>
+    <div class="col" >
+        <div class="card" style="width: 10rem;">
+          <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r1c5.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+      <div class="col" >
+        <div class="card" style="width: 10rem;">
+          <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r1c6.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+        </div>
+      </div>
+  </div>
+
+
+  &nbsp;
+
+
+
+
+  <div class="row" >
+    <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r2c1.png" href="Collections1" class=" img-fluid" class="card-img-top" alt="...">
+     
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r2c2.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r2c3.png"href="Collections1" class=" img-fluid"class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r2c4.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+      
+    </div>
+  </div>
+  <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r2c5.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+        
+      </div>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r2c6.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+</div>
+
+
+
+&nbsp;
+
+
+
+
+
+<div class="row" >
+    <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r3c1.png" href="Collections1" class=" img-fluid" class="card-img-top" alt="...">
+     
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r3c2.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r3c3.png"href="Collections1" class=" img-fluid"class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r3c4.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+      
+    </div>
+  </div>
+  <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r3c5.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+        
+      </div>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r3c6.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+</div>
+
+
+
+
+&nbsp;
+
+
+
+
+
+
+
+
+<div class="row" >
+    <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r4c1.png" href="Collections1" class=" img-fluid" class="card-img-top" alt="...">
+     
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r4c2.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r4c3.png"href="Collections1" class=" img-fluid"class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r4c4.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+      
+    </div>
+  </div>
+  <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r4c5.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+        
+      </div>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r4c6.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+</div>
+
+
+
+&nbsp;
+
+
+
+
+
+
+<div class="row" >
+    <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r5c1.png" href="Collections1" class=" img-fluid" class="card-img-top" alt="...">
+     
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r5c2.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r5c3.png"href="Collections1" class=" img-fluid"class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r5c4.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+      
+    </div>
+  </div>
+  <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r5c5.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+        
+      </div>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 10rem;">
+        <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r5c6.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+</div>
+
+
+
+
+&nbsp;
+
+
+
+
+
+
+<div class="row" >
+    <div class="col" >
+    <div class="card" style="width: 10rem;margin-left: 320px; " >
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r6c1.png" href="Collections1" class=" img-fluid" class="card-img-top" alt="...">
+     
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem; ">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r6c2.png"href="Collections1"class=" img-fluid" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col" >
+    <div class="card" style="width: 10rem;margin-right: 320px; ">
+      <img src="C:\Users\Let`s\Pictures\Myntra Web Images\r6c3.png"href="#Collections1" class=" img-fluid"class="card-img-top" alt="...">
+
+    </div>
+  </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<div>
+  <img src="C:\Users\Let`s\Pictures\Myntra Web Images\offer_pic.png" href="#" class="img-fluid" alt="offer">
+</div>
+
+  
+</div>
+</div></a> </center>
+</body>
+</html
